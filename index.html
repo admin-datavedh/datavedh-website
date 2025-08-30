@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataVedh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <nav class="bg-white shadow-lg p-4 sticky top-0 z-50 rounded-b-xl mx-2 mt-2">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="#home" class="flex items-center space-x-2 nav-link">
+                <img src="assets/logo.jpg" alt="Data Vedh Logo" class="h-10 w-10">
+                <span class="text-2xl font-bold samsung-blue">Data Vedh</span>
+            </a>
+            <marquee class="text-xs text-indigo-800 font-semibold w-full sm:w-full" behavior="scroll" direction="left" scrollamount="3">
+                Join us at DataVedh - Where Data Meets Discovery &nbsp; &nbsp; &nbsp;
+            </marquee>
+            <button id="mobile-menu-btn" class="lg:hidden text-gray-600 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-4 6h4"></path>
+                </svg>
+            </button>
+            
+            <div class="hidden lg:flex space-x-8">
+                <a href="#home" class="text-gray-600 hover:text-indigo-600 transition duration-300 nav-link flex items-center space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    <span>Home</span>
+                </a>
+                <a href="#programs" class="text-gray-600 hover:text-indigo-600 transition duration-300 nav-link flex items-center space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+                    <span>Programs</span>
+                </a>
+                <a href="#success-stories" class="text-gray-600 hover:text-indigo-600 transition duration-300 nav-link flex items-center space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <span>Success Stories</span>
+                </a>
+                <a href="#about" class="text-gray-600 hover:text-indigo-600 transition duration-300 nav-link flex items-center space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <span>About Us</span>
+                </a>
+                <a href="#contact" class="text-white px-4 py-2 rounded-lg transition duration-300 nav-link flex items-center space-x-2 show-contact-btn" style="background-color: #1428A0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L2 22l1.4-1.4a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                    <span>Contact</span>
+                </a>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="lg:hidden mt-4 space-y-2 px-4 pb-2">
+            <a href="#home" class="block text-gray-600 hover:text-indigo-600 transition duration-300 nav-link flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <span>Home</span>
+            </a>
+            <a href="#programs" class="block text-gray-600 hover:text-indigo-600 transition duration-300 nav-link flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+                <span>Programs</span>
+            </a>
+            <a href="#success-stories" class="block text-gray-600 hover:text-indigo-600 transition duration-300 nav-link flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <span>Success Stories</span>
+            </a>
+            <a href="#about" class="block text-gray-600 hover:text-indigo-600 transition duration-300 nav-link flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span>About Us</span>
+            </a>
+            <a href="#contact" class="block text-white px-4 py-2 text-center rounded-lg transition duration-300 mt-2 nav-link flex items-center space-x-2 show-contact-btn" style="background-color: #1428A0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L2 22l1.4-1.4a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                <span>Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="py-20 lg:py-32 text-center bg-white rounded-b-xl mx-2 mt-2 shadow-inner">
+            <div class="container mx-auto px-4">
+                <h1 class="samsung-blue mb-4 text-3xl lg:text-4xl font-bold">
+                    Elevate Your Future with Cutting-Edge Skills
+                </h1>
+                <p class="text-lg lg:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                    DataVedh offers hands-on, immersive training in the technologies shaping tomorrow.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#programs" class="text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-md nav-link" style="background-color: #1428A0;">
+                        Explore Courses
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="programs" class="py-16 bg-gray-50 hidden">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl lg:text-4xl font-bold text-center samsung-blue mb-12">
+                    Our Course Offerings
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <a href="#course-detail" data-course-id="data-science" class="course-link block bg-white p-6 rounded-xl shadow-lg border border-gray-200 text-center hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+                        <div class="flex justify-center mb-4">
+                            <img src="assets/data_science_logo.png" alt="Data Science Logo" class="w-12 h-12 object-contain">
+                        </div>
+                        <h3 class="text-xl font-bold samsung-blue mb-2">Data Science</h3>
+                        <p class="text-gray-600 text-sm">Analyze and interpret complex data to drive business decisions.</p>
+                    </a>
+                    <a href="#course-detail" data-course-id="ai" class="course-link block bg-white p-6 rounded-xl shadow-lg border border-gray-200 text-center hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+                        <div class="flex justify-center mb-4">
+                            <img src="assets/ai_logo.png" alt="Artificial Intelligence Logo" class="w-12 h-12 object-contain">
+                        </div>
+                        <h3 class="text-xl font-bold samsung-blue mb-2">Artificial Intelligence</h3>
+                        <p class="text-gray-600 text-sm">Learn the fundamentals of machine learning and intelligent systems.</p>
+                    </a>
+                    <a href="#course-detail" data-course-id="tableau" class="course-link block bg-white p-6 rounded-xl shadow-lg border border-gray-200 text-center hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+                        <div class="flex justify-center mb-4">
+                            <img src="assets/tableau_logo.png" alt="Tableau Logo" class="w-12 h-12 object-contain">
+                        </div>
+                        <h3 class="text-xl font-bold samsung-blue mb-2">Tableau</h3>
+                        <p class="text-gray-600 text-sm">Create powerful data visualizations and interactive dashboards.</p>
+                    </a>
+                    <a href="#course-detail" data-course-id="power-bi" class="course-link block bg-white p-6 rounded-xl shadow-lg border border-gray-200 text-center hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+                        <div class="flex justify-center mb-4">
+                            <img src="assets/powerbi_logo.png" alt="Power BI Logo" class="w-12 h-12 object-contain">
+                        </div>
+                        <h3 class="text-xl font-bold samsung-blue mb-2">Power BI</h3>
+                        <p class="text-gray-600 text-sm">Build and manage business intelligence and analytics solutions.</p>
+                    </a>
+                    <a href="#course-detail" data-course-id="sql" class="course-link block bg-white p-6 rounded-xl shadow-lg border border-gray-200 text-center hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+                        <div class="flex justify-center mb-4">
+                            <img src="assets/sql_logo.png" alt="SQL Logo" class="w-12 h-12 object-contain">
+                        </div>
+                        <h3 class="text-xl font-bold samsung-blue mb-2">SQL</h3>
+                        <p class="text-gray-600 text-sm">Master the standard language for managing and querying relational databases.</p>
+                    </a>
+                    <a href="#course-detail" data-course-id="python" class="course-link block bg-white p-6 rounded-xl shadow-lg border border-gray-200 text-center hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+                        <div class="flex justify-center mb-4">
+                            <img src="assets/python_logo.png" alt="Python Logo" class="w-12 h-12 object-contain">
+                        </div>
+                        <h3 class="text-xl font-bold samsung-blue mb-2">Python</h3>
+                        <p class="text-gray-600 text-sm">Develop versatile applications and scripts with this popular programming language.</p>
+                    </a>
+                    <a href="#course-detail" data-course-id="java" class="course-link block bg-white p-6 rounded-xl shadow-lg border border-gray-200 text-center hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+                        <div class="flex justify-center mb-4">
+                            <img src="assets/java_logo.png" alt="Java Logo" class="w-12 h-12 object-contain">
+                        </div>
+                        <h3 class="text-xl font-bold samsung-blue mb-2">Java</h3>
+                        <p class="text-gray-600 text-sm">Create robust, high-performance applications for a variety of platforms.</p>
+                    </a>
+                    <a href="#course-detail" data-course-id="qa-automation" class="course-link block bg-white p-6 rounded-xl shadow-lg border border-gray-200 text-center hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+                        <div class="flex justify-center mb-4">
+                            <img src="assets/qa_logo.png" alt="QA Automation Logo" class="w-12 h-12 object-contain">
+                        </div>
+                        <h3 class="text-xl font-bold samsung-blue mb-2">QA Automation</h3>
+                        <p class="text-gray-600 text-sm">Design and implement automated test scripts to ensure software quality.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="course-detail" class="py-16 bg-white hidden">
+            <div class="container mx-auto px-4">
+                <a href="#programs" id="back-to-courses-btn" class="transition duration-300 mb-8 inline-block" style="color: #1428A0">&larr; Back to Courses</a>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    <div>
+                        <h1 id="course-title" class="text-4xl lg:text-5xl font-extrabold samsung-blue mb-6"></h1>
+                        <div id="course-features" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                            </div>
+                        <a href="#discuss" class="text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-md nav-link" style="background-color: #1428A0">
+                            Enroll Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="program-highlights" class="py-16 bg-gray-50 hidden">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl lg:text-4xl font-bold text-center text-indigo-900 mb-12">
+                    Program <span class="samsung-blue">Highlights</span>
+                </h2>
+                <div class="flex flex-wrap justify-center items-center gap-6">
+                    <div class="p-6 rounded-xl border border-blue-200 bg-white shadow-sm flex flex-col items-center text-center">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Interact live with your trainers</h3>
+                        <div class="flex flex-wrap justify-center space-x-6">
+                            <div class="flex flex-col items-center text-center">
+                                <div class="w-20 h-20 bg-blue-100 rounded-lg flex items-center justify-center mb-2 p-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-16 h-16">
+                                        <rect x="2" y="3" width="20" height="15" rx="2" ry="2" />
+                                        <line x1="8" y1="21" x2="16" y2="21" />
+                                        <line x1="12" y1="18" x2="12" y2="21" />
+                                        <path d="M10 8h.01" />
+                                        <path d="M14 8h.01" />
+                                        <path d="M12 12h.01" />
+                                        <path d="M10 16h.01" />
+                                    </svg>
+                                </div>
+                                <p class="text-sm font-medium text-gray-700">Live-online classes</p>
+                            </div>
+                            <div class="flex flex-col items-center text-center">
+                                <div class="w-20 h-20 bg-blue-100 rounded-lg flex items-center justify-center mb-2 p-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-16 h-16">
+                                        <path d="M16 18H8a6 6 0 0 1 0-12h8a6 6 0 0 1 0 12z" />
+                                        <path d="M12 15a3 3 0 0 0-3-3" />
+                                        <path d="M15 12a3 3 0 0 0-3 3" />
+                                        <path d="M12 12a3 3 0 0 0-3 3" />
+                                        <path d="M15 15a3 3 0 0 0-3-3" />
+                                    </svg>
+                                </div>
+                                <p class="text-sm font-medium text-gray-700">Live doubt clearing sessions</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 rounded-xl border border-blue-200 bg-white shadow-sm flex flex-col items-center text-center">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Learn hands-on</h3>
+                        <div class="flex flex-wrap justify-center space-x-6">
+                            <div class="flex flex-col items-center text-center">
+                                <div class="w-20 h-20 bg-blue-100 rounded-lg flex items-center justify-center mb-2 p-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-16 h-16">
+                                        <rect x="2" y="4" width="20" height="15" rx="2" ry="2" />
+                                        <path d="M16 8h2" />
+                                        <path d="M16 12h2" />
+                                        <path d="M16 16h2" />
+                                        <path d="M6 12h.01" />
+                                        <path d="M10 12h.01" />
+                                        <path d="M14 12h.01" />
+                                        <path d="M6 16h.01" />
+                                        <path d="M10 16h.01" />
+                                        <path d="M14 16h.01" />
+                                    </svg>
+                                </div>
+                                <p class="text-sm font-medium text-gray-700">20+ Projects</p>
+                            </div>
+                            <div class="flex flex-col items-center text-center">
+                                <div class="w-20 h-20 bg-blue-100 rounded-lg flex items-center justify-center mb-2 p-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-16 h-16">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                        <path d="M16 2h-4" />
+                                        <path d="M12 2v20" />
+                                        <path d="M12 12h4" />
+                                        <path d="M12 16h6" />
+                                        <path d="M8 8h-4" />
+                                        <path d="M8 12h-4" />
+                                        <path d="M8 16h-4" />
+                                    </svg>
+                                </div>
+                                <p class="text-sm font-medium text-gray-700">230+ Assignments</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-xl border border-blue-200 bg-white shadow-sm flex flex-col items-center text-center">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Get industry-ready</h3>
+                        <div class="flex justify-center space-x-4">
+                            <div class="flex flex-col items-center text-center">
+                                <div class="w-20 h-20 bg-blue-100 rounded-lg flex items-center justify-center mb-2 p-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-16 h-16">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                                        <path d="M2 17l10 5 10-5" />
+                                        <path d="M2 12l10 5 10-5" />
+                                    </svg>
+                                </div>
+                                <p class="text-sm font-medium text-gray-700">Work on real world case studies</p>
+                            </div>
+                            <div class="flex flex-col items-center text-center">
+                                <div class="w-20 h-20 bg-blue-100 rounded-lg flex items-center justify-center mb-2 p-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-16 h-16">
+                                        <circle cx="12" cy="7" r="4" />
+                                        <path d="M12 11c-2.761 0-5 2.239-5 5v5h10v-5c0-2.761-2.239-5-5-5z" />
+                                        <path d="M20 16a8 8 0 0 0-8-8 8 8 0 0 0-8 8" />
+                                        <path d="M4 12v4" />
+                                        <path d="M20 12v4" />
+                                    </svg>
+                                </div>
+                                <p class="text-sm font-medium text-gray-700">Mock interviews with industry experts</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="success-stories" class="py-16 bg-white hidden">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold samsung-blue mb-4">
+                    Our Achievements
+                </h2>
+                <p class="text-gray-600 max-w-4xl mx-auto mb-8 text-lg">
+                    We're proud to have helped many students achieve their career goals. Our graduates are highly sought after by leading companies across the globe.
+                </p>
+
+                <div class="mt-12">
+                    <p class="text-xl lg:text-2xl font-bold text-gray-700 mb-8">
+                        Our Hiring Partners
+                    </p>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center justify-center">
+                        <!-- Capgemini Logo -->
+                        <div class="p-4 bg-white rounded-lg shadow-md border border-gray-200">
+                            <img src="assets/capgemini_logo.png" alt="Capgemini Logo" class="mx-auto h-12 object-contain">
+                        </div>
+                        <!-- Virtusa Logo -->
+                        <div class="p-4 bg-white rounded-lg shadow-md border border-gray-200">
+                            <img src="assets/virtusa_logo.png" alt="Virtusa Logo" class="mx-auto h-12 object-contain">
+                        </div>
+                        <!-- Amazon Logo -->
+                        <div class="p-4 bg-white rounded-lg shadow-md border border-gray-200">
+                            <img src="assets/amazon_logo.png" alt="Amazon Logo" class="mx-auto h-12 object-contain">
+                        </div>
+                        <!-- UST Global Logo -->
+                        <div class="p-4 bg-white rounded-lg shadow-md border border-gray-200">
+                            <img src="assets/ust_logo.png" alt="UST Global Logo" class="mx-auto h-12 object-contain">
+                        </div>
+                        <!-- ADP Logo -->
+                        <div class="p-4 bg-white rounded-lg shadow-md border border-gray-200">
+                            <img src="assets/ADP_logo.png" alt="ADP Logo" class="mx-auto h-12 object-contain">
+                        </div>
+                        <!-- HCL Logo -->
+                        <div class="p-4 bg-white rounded-lg shadow-md border border-gray-200">
+                            <img src="assets/hcl_logo.png" alt="HCL Logo" class="mx-auto h-12 object-contain">
+                        </div>
+                        <!-- TCS Logo -->
+                        <div class="p-4 bg-white rounded-lg shadow-md border border-gray-200">
+                            <img src="assets/tcs_logo.png" alt="TCS Logo" class="mx-auto h-12 object-contain">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-16 bg-white hidden">
+            <div class="container mx-auto px-4 text-center">
+                <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8">
+                    <div class="w-full lg:w-1/2 rounded-xl overflow-hidden shadow-md border border-gray-200">
+                        <img src="assets/student_picture.png" alt="Student Image" class="w-full h-auto object-cover">
+                    </div>
+                    <div class="w-full lg:w-1/2 text-left">
+                        <h1 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+                            We are <span class="samsung-blue">DataVedh</span>
+                        </h1>
+                        <p class="text-gray-600 text-lg mb-6">
+                            DataVedh is an upskilling platform that helps people launch, transform, and propel their careers in high-growth domains. We focus on effectively mobilizing skills, resources, and knowledge to produce candidates who can stand out in the hyper-competitive tech sector. We are also committed to becoming a trusted source of skilled talent for the industry.
+                        </p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                Industry-experienced instructors
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                Project-based curriculum
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                Career Services
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                Placement Assistance
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-12 text-center">
+                    <h2 class="text-2xl lg:text-3xl font-bold samsung-blue mb-4">
+                        Who We Are
+                    </h2>
+                    <p class="text-gray-600 max-w-4xl mx-auto mb-8 text-lg">
+                        At DataVedh, we believe in turning curiosity into expertise. Our mission is to bridge the gap between learning and real-world application in Artificial Intelligence, Data Science, Data Engineering, and Business Intelligence tools. We are not just an institute – we are a community of learners, mentors, and innovators with a focus on hands-on learning, live projects, and interactive sessions, we help students and professionals build the skills needed to excel in today’s data-driven world.
+                    </p>
+                    <p class="samsung-blue max-w-4xl mx-auto mb-8 text-xl">
+                        At DataVedh, learning is not just about tools – it’s about mindset, creativity, and future readiness.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="p-6 rounded-xl border border-gray-200">
+                            <div class="flex flex-col items-center">
+                                <img src="assets/our_vision.png" alt="Our Vision Icon" class="w-12 h-12 mb-4">
+                                <h3 class="text-2xl font-semibold mb-2 samsung-blue">Our Vision</h3>
+                            </div>
+                            <p class="text-gray-600">To empower learners with data skills that create opportunities and impact.</p>
+                        </div>
+                        <div class="p-6 rounded-xl border border-gray-200">
+                            <div class="flex flex-col items-center">
+                                <img src="assets/our_mission.png" alt="Our Mission Icon" class="w-12 h-12 mb-4">
+                                <h3 class="text-2xl font-semibold mb-2 samsung-blue">Our Mission</h3>
+                            </div>
+                            <p class="text-gray-600">To make high-quality, practical, and engaging data education accessible to all.</p>
+                        </div>
+                        <div class="p-6 rounded-xl border border-gray-200">
+                            <div class="flex flex-col items-center">
+                                <img src="assets/flexible_learning.png" alt="Flexible Learning Icon" class="w-12 h-12 mb-4">
+                                <h3 class="text-2xl font-semibold samsung-blue mb-2">Flexible Learning</h3>
+                            </div>
+                            <p class="text-gray-600">Our programs are designed to fit your schedule, allowing you to learn at your own pace from anywhere in the world.</p>
+                        </div>
+                        <div class="p-6 rounded-xl border border-gray-200">
+                            <div class="flex flex-col items-center">
+                                <img src="assets/community_support.png" alt="Community Support Icon" class="w-12 h-12 mb-4">
+                                <h3 class="text-2xl font-semibold samsung-blue mb-2">Community Support</h3>
+                            </div>
+                            <p class="text-gray-600">Join a vibrant community of peers and instructors who are ready to support your learning journey every step of the way.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 bg-indigo-600 text-white text-center rounded-t-xl mx-2 mb-2 hidden">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4">
+                    Ready to Start Your Journey?
+                </h2>
+                <p class="text-lg mb-8 max-w-2xl mx-auto">
+                    Take the first step towards a rewarding career. Join with our learners who are already building their future with us.
+                </p>
+                <a href="#discuss" class="bg-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-lg nav-link" style="background-color: #1428A0">
+                    Enroll Now
+                </a>
+            </div>
+        </section>
+
+        <section id="discuss" class="py-16 bg-gray-50 text-center hidden">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl lg:text-4xl font-bold samsung-blue mb-4">
+                    Discuss Your Career Path
+                </h2>
+                <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+                    Ready to take the next step? Our career advisors are here to help. Schedule a one-on-one session to discuss our courses and find the perfect fit for your goals.<br />
+                    Fill the below form to get in touch
+                </p>
+            </div>
+            <!-- Contact Form -->
+            <a href="https://forms.gle/bqNhv4vS3WSPSRvXA" target="_blank" class="form-btn">click here to fill the form</a>
+        </section>
+    </main>
+
+    <footer id="footer" class="bg-gray-900 text-white relative">
+        <div class="container mx-auto px-4 text-center lg:text-left">
+            <div class="mt-8 text-center text-gray-500 text-sm">
+                &copy; 2025 DataVedh. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
