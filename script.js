@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const aboutSection = document.getElementById('about');
     const contactSection = document.getElementById('contact');
     const discussSection = document.getElementById('discuss');
+    const mandatoryCourseSection = document.getElementById('mandatory-course');
 
     // Data for course details (can be fetched from an API in a real application)
     const courseData = {
@@ -137,6 +138,14 @@ document.addEventListener('DOMContentLoaded', () => {
             case '#about':
                 showSection(aboutSection);
                 break;
+            case '#mandatory-course':
+                if (mandatoryCourseSection) { 
+                    showSection(mandatoryCourseSection);
+                } else {
+                    console.error("Mandatory course section element not found.");
+                    showSection(homeSection); 
+                }
+                break;
             case '#contact':
                 // Show both the contact section and the new discuss section
                 showSection(contactSection);
@@ -174,6 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             featuresContainer.appendChild(featureElement);
         });
+        
     };
 
     // Handle mobile menu toggle
@@ -186,6 +196,16 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', (e) => {
             const targetId = link.getAttribute('href');
             window.location.hash = targetId;
+            if (targetId.startsWith('#')) {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                     e.preventDefault(); // Stop default hash jump if smooth scroll is preferred
+                     targetElement.scrollIntoView({
+                         behavior: 'smooth',
+                         block: 'start'
+                     });
+                }
+            }
             mobileMenu.classList.add('hidden');
         });
     });
