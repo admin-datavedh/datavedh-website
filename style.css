@@ -35,6 +35,18 @@ h1, h2, h3 {
   color: #1428A0;
 }
 
+
+#program-highlights {
+  margin-top: 0; /* or a smaller value like 8px */
+  padding-top: 0;
+}
+
+
+
+.view-details {
+  background-color: #1428A0;
+}
+
 .contact-btn:hover {
   background-color: #1428A0;
 }
@@ -52,3 +64,4 @@ h1, h2, h3 {
 .form-btn:hover {
   background: #1428A0;
 }
+
