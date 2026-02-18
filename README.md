@@ -15,21 +15,6 @@ HTML: The foundational markup language for the web page structure.
 
 Tailwind CSS: A utility-first CSS framework used for rapid and responsive styling.
 
-Getting Started
-This project is designed for simplicity. There is no complex setup required.
-
-Clone the repository:
-
-git clone https://github.com/your-username/your-repository-name.git
-
-Create the assets folder: In the root directory of your project, create a new folder named assets.
-
-Add your logo: Place your logo image file (e.g., logo.png) inside the assets folder.
-
-Open the file: Simply open the index.html file in your web browser.
-
-No build tools or servers are necessary to view the website locally.
-
 Contact
 For any questions or feedback, please feel free to reach out.
 
