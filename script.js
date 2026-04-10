@@ -171,11 +171,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Populate features
         const featuresContainer = document.getElementById('course-features');
-        featuresContainer.textContent = '';
+        featuresContainer.innerHTML = '';
         data.features.forEach(feature => {
             const featureElement = document.createElement('div');
             featureElement.className = 'flex items-center space-x-2';
-            featureElement.textContent = `
+            featureElement.innerHTML = `
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="${feature.icon}" />
                 </svg>
