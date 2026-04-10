@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"content=" default-src 'self';script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <title>DataVedh</title>
     <link rel="icon" href="assets/favicon_icon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -678,7 +681,7 @@
                 <p class="text-lg text-black mb-4 max-w-3xl mx-auto">Fill the below form to get in touch</p>
             </div>
             <!-- Contact Form -->
-            <a href="https://forms.gle/bqNhv4vS3WSPSRvXA" target="_blank"
+            <a href="https://forms.gle/bqNhv4vS3WSPSRvXA" target="_blank" rel="noopener noreferrer"
                 class="form-btn font-semibold py-3 px-8 my-3 rounded-full transition duration-300 shadow-lg">Click here
                 to fill the form</a>
         </section>
